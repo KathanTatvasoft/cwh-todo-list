@@ -1,0 +1,23 @@
+<div class="d-flex align-items-start gap-2">
+  <input
+    type="checkbox"
+    class="form-check-input mt-1"
+    [checked]="!todo.active"
+    (change)="onToggle()"
+  />
+
+  <div>
+    <h4 [ngStyle]="{ 'text-decoration': todo.active ? 'none' : 'line-through' }">
+      {{ todo.title }}
+    </h4>
+
+    <p [ngStyle]="{ 'text-decoration': todo.active ? 'none' : 'line-through' }">
+      {{ todo.desc }}
+    </p>
+
+    <p>Status: {{ todo.active ? 'InComplete' : 'Completed' }}</p>
+
+<button class="btn btn-danger" (click)="onClick()">Delete</button>
+ </div>
+</div>
+<hr />
